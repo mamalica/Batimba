@@ -1,14 +1,24 @@
-app = "my-telegram-bot"  # این نام باید یکتـا باشه در Fly.io
+# اسم یکتای اپلیکیشن توی Fly.io
+app = "batimba98"    # ← اینو با یکتاترین اسمی که می‌خوای عوض کن
+
+# Region پیش‌فرض (می‌تونی fra, ams, ord یا نزدیک‌ترین رو بگذاری)
+primary_region = "fra"
 
 [build]
-  builder = "paketobuildpacks/builder:base"
+  # اگر از Dockerfile استفاده می‌کنی  
+  dockerfile = "Dockerfile"
+  # یا اگر می‌خوای از Buildpacks استفاده کنی، خط بالارو کامنت کن و اینو فعال کن:
+  # builder = "paketobuildpacks/builder:base"
 
 [env]
-  BOT_TOKEN = "متغیر خالی بذار فعلاً"
-  CHANNEL_ID = "متغیر خالی بذار فعلاً"
+  # این متغیرها رو بعداً با flyctl secrets ست می‌کنی
+  BOT_TOKEN = ""  
+  CHANNEL_ID = ""
+  CHANNEL_USERNAME = ""
+  ADMIN_ID = ""
 
 [[services]]
-  internal_port = 8080
+  internal_port = 8080   # Flask یا برنامه‌ات این پورت رو استفاده میکنه
   protocol = "tcp"
 
   [[services.ports]]
