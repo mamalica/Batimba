@@ -2,7 +2,7 @@
 app = "batimba98"    # ← اینو با یکتاترین اسمی که می‌خوای عوض کن
 
 # Region پیش‌فرض (می‌تونی fra, ams, ord یا نزدیک‌ترین رو بگذاری)
-primary_region = "fra"
+primary_region = "ams"
 
 [build]
   # اگر از Dockerfile استفاده می‌کنی  
